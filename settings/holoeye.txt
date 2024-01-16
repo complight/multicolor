@@ -1,0 +1,54 @@
+{
+
+
+    "general"                 : {
+                                 "device"                  : "cuda",
+                                 "iterations"              : 1000,
+                                 "output directory"        : "~/output/multi_color/holoeye/",
+                                 "learning rate"           : 25e-3,
+                                 "learning rate floor"     : 5e-3,
+                                 "loss weights"            : [3.0, 0.05, 0.05],
+                                 "double phase constrain"  : 1,
+                                 "method"                  : "multi-color",
+                                 "reduction"               : "mean"
+                                },
+
+
+    "target"                  : {
+                                 "image filename"          : "./input/hd/holographic_glasses.png",
+                                 "depth filename"          : "./input/hd/holographic_glasses.png",
+                                 "channel power filename"  : "",
+                                 "number of frames"        : 3,
+                                 "color depth"             : 8,
+                                 "peak amplitude"          : 1.0,
+                                 "number of depth layers"  : 3,
+                                 "volume depth"            : 0.01,
+                                 "location offset"         : 0.005,
+                                 "defocus blur size"       : 20,
+                                 "blur ratio"              : 3,
+                                 "scheme"                  : "defocus",
+                                 "weights"                 : [1.0, 1.0, 1.0, 0.0],
+                                 "optimize peak amplitude" : 0,
+                                 "eye aperture size"       : 1080,
+                                 "img loss threshold"      : 1.0e-2
+                                },  
+
+
+    "spatial light modulator" : {
+                                 "model"                   : "Holoeye Pluto 1.3.3",
+                                 "pixel pitch"             : 8e-6,
+                                 "resolution"              : [1080, 1920]
+                                }, 
+
+
+    "beam"                    : {
+                                 "wavelengths"             : [639e-9, 515e-9, 473e-9],
+                                 "pinhole size"            : 1080,
+                                 "beam profile"            : "",
+                                 "save at every"           : 100,
+                                 "propagation type"        : "Bandlimited Angular Spectrum",
+                                 "propagator type"         : "forward"
+                                }
+
+
+}

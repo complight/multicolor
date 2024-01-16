@@ -1,0 +1,53 @@
+{
+
+
+    "general"                 : {
+                                 "device"                  : "cuda",
+                                 "iterations"              : 1000,
+                                 "output directory"        : "~/output/multi_color/jasper/",
+                                 "learning rate"           : 25e-3,
+                                 "learning rate floor"     : 5e-3,
+                                 "loss weights"            : [3.0, 0.05, 0.05],
+                                 "double phase constrain"  : 1,
+                                 "method"                  : "multi-color",
+                                 "reduction"               : "mean"
+                                },
+
+
+    "target"                  : {
+                                 "image filename"          : "./input/4k/0900.png",
+                                 "depth filename"          : "./input/4k/0900_depth.png",
+                                 "channel power filename"  : "",
+                                 "number of frames"        : 3,
+                                 "color depth"             : 8,
+                                 "peak amplitude"          : 1.4,
+                                 "number of depth layers"  : 3,
+                                 "volume depth"            : 5e-3,
+                                 "location offset"         : 0.0,
+                                 "defocus blur size"       : 20,
+                                 "blur ratio"              : 3,
+                                 "scheme"                  : "defocus",
+                                 "weights"                 : [1.0, 1.0, 1.0, 0.0],
+                                 "optimize peak amplitude" : 0,
+                                 "eye aperture size"       : 1800,
+                                 "img loss threshold"      : 1.0e-2
+                                },  
+
+
+    "spatial light modulator" : {
+                                 "model"                   : "Jasper Display Educational 4k",
+                                 "pixel pitch"             : 3.74e-6,
+                                 "resolution"              : [2400, 4094]
+                                }, 
+
+
+    "beam"                    : {
+                                 "wavelengths"             : [639e-9, 515e-9, 473e-9],
+                                 "pinhole size"            : 1800,
+                                 "beam profile"            : "",
+                                 "propagation type"        : "Bandlimited Angular Spectrum",
+                                 "propagator type"         : "forward"
+                                }
+
+
+}
