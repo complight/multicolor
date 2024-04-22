@@ -1,3 +1,5 @@
+[![](https://www.replicabilitystamp.org/logo/Reproducibility-small.png)](http://www.replicabilitystamp.org#https-github-com-complight-multicolor)
+
 # Multi-color Holograms Improve Brightness in Holographic Displays 
 [Koray Kavaklı](https://www.linkedin.com/in/koray-kavakli-75949241/),
 [Liang Shi](https://people.csail.mit.edu/liangs/),
