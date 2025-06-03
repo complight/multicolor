@@ -3,13 +3,13 @@
 
     "general"                 : {
                                  "device"                  : "cuda",
-                                 "iterations"              : 1000,
+                                 "iterations"              : 200,
                                  "output directory"        : "~/output/multi_color/jasper/",
                                  "learning rate"           : 25e-3,
                                  "learning rate floor"     : 5e-3,
                                  "loss weights"            : [3.0, 0.05, 0.05],
-                                 "double phase constrain"  : 1,
-                                 "method"                  : "multi-color",
+                                 "double phase constrain"  : 0,
+                                 "method"                  : "conventional",
                                  "reduction"               : "mean"
                                 },
 
@@ -20,10 +20,10 @@
                                  "channel power filename"  : "",
                                  "number of frames"        : 3,
                                  "color depth"             : 8,
-                                 "peak amplitude"          : 1.4,
+                                 "peak amplitude"          : 1.0,
                                  "number of depth layers"  : 3,
-                                 "volume depth"            : 5e-3,
-                                 "location offset"         : 0.0,
+                                 "volume depth"            : 1.00e-3,
+                                 "location offset"         : 3.50e-3,
                                  "defocus blur size"       : 20,
                                  "blur ratio"              : 3,
                                  "scheme"                  : "defocus",
@@ -36,16 +36,20 @@
                                                               "loss_l1_cor"  : 0.0
                                                              },
                                  "perceptual weights"      : {
-                                                              "cvvdp"        : 1.0,
-                                                              "fvvdp"        : 1.0,
-                                                              "lpips"        : 1.0,
-                                                              "psnr"         : 1.0,
-                                                              "ssim"         : 1.0,
-                                                              "msssim"       : 1.0
+                                                              "cvvdp"        : 0.0,
+                                                              "fvvdp"        : 0.0,
+                                                              "lpips"        : 0.0,
+                                                              "psnr"         : 0.0,
+                                                              "ssim"         : 0.0,
+                                                              "msssim"       : 0.0
                                                              },
                                  "optimize peak amplitude" : 0,
                                  "eye aperture size"       : 1800,
-                                 "img loss threshold"      : 1.0e-2
+                                 "img loss threshold"      : 1.0e-2,
+                                 "noise"                   : {
+                                                              "inject"      : 0,
+                                                              "ratio"       : 1e-3
+                                                             }
                                 },  
 
 

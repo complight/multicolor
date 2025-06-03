@@ -103,7 +103,9 @@ def process(settings_fn):
                                         )
     hologram_phases, frame_reconstructions, laser_powers, channel_powers, peak_amplitude = mcho.optimize(
                                                                                                          number_of_iterations = settings["general"]["iterations"],
-                                                                                                         weights = settings["general"]["loss weights"]
+                                                                                                         weights = settings["general"]["loss weights"],
+                                                                                                         inject_noise = settings['target']['noise']['inject'],
+                                                                                                         noise_ratio = settings['target']['noise']['ratio'],
                                                                                                         )
     settings['target']['peak amplitude'] = peak_amplitude
     save(
