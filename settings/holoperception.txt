@@ -4,7 +4,7 @@
     "general"                 : {
                                  "device"                  : "cuda",
                                  "iterations"              : 250,
-                                 "output directory"        : "~/output/multi_color/holoeye/",
+                                 "output directory"        : "~/output/multi_color/holoperception/",
                                  "learning rate"           : 25e-3,
                                  "learning rate floor"     : 5e-3,
                                  "loss weights"            : [3.0, 0.05, 0.05],
@@ -36,12 +36,12 @@
                                                               "loss_l1_cor"  : 0.0
                                                              },
                                  "perceptual weights"      : {
-                                                              "cvvdp"        : 0.0,
-                                                              "fvvdp"        : 0.0,
-                                                              "lpips"        : 0.0,
-                                                              "psnr"         : 0.0,
+                                                              "cvvdp"        : -0.0001,
+                                                              "fvvdp"        : -0.0001,
+                                                              "lpips"        : 0.0001,
+                                                              "psnr"         : -0.0001,
                                                               "ssim"         : 0.0,
-                                                              "msssim"       : 0.0
+                                                              "msssim"       : -0.001
                                                              },
                                  "optimize peak amplitude" : 0,
                                  "eye aperture size"       : 1080,

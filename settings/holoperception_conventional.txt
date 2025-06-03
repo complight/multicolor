@@ -4,7 +4,7 @@
     "general"                 : {
                                  "device"                  : "cuda",
                                  "iterations"              : 250,
-                                 "output directory"        : "~/output/multi_color/holoeye/",
+                                 "output directory"        : "~/output/multi_color/holoperception_conventional/",
                                  "learning rate"           : 25e-3,
                                  "learning rate floor"     : 5e-3,
                                  "loss weights"            : [3.0, 0.05, 0.05],
