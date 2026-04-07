@@ -64,13 +64,13 @@ python3 main.py
 
 
 ### (2) Reconfiguring the code for your needs
-Please consult the settings file found in `settings/jasper.txt`, where you will find a list of self descriptive variables that you can modify according to your needs.
+Please consult the settings file found in `settings/jasper.json`, where you will find a list of self descriptive variables that you can modify according to your needs.
 This way, you can create a new settings file or modify the existing one.
 
 If you are willing to use the code with another settings file, please use the following syntax:
 
 ```shell
-python3 main.py --settings settings/jasper.txt
+python3 main.py --settings settings/jasper.json
 ```
 
 If you are looking into finding more sample images, consider visiting our [images repository](https://github.com/complight/images).

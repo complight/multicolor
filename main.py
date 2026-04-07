@@ -9,7 +9,7 @@ __title__ = 'Multi-color Holograms'
 
 
 def main():
-    settings_filename = './settings/jasper.txt'
+    settings_filename = './settings/jasper.json'
     parser = argparse.ArgumentParser(description = __title__)
     parser.add_argument(
                         '--settings',
@@ -125,7 +125,7 @@ def save(settings, device, hologram_phases, laser_powers, channel_powers, frame_
     output_folder = settings["general"]["output directory"]
     directory = output_folder + settings["general"]["method"]
     odak.tools.check_directory(directory)
-    odak.tools.save_dictionary(settings, '{}/settings.txt'.format(directory))
+    odak.tools.save_dictionary(settings, '{}/settings.json'.format(directory))
     checker_complex = odak.learn.wave.linear_grating(
                                                      settings["spatial light modulator"]["resolution"][0],
                                                      settings["spatial light modulator"]["resolution"][1],
