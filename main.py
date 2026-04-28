@@ -71,7 +71,7 @@ def process(settings_fn):
                                wavelengths = settings['beam']['wavelengths'],
                                pixel_pitch = settings['spatial light modulator']['pixel pitch'],
                                resolution = settings['spatial light modulator']['resolution'],
-                               aperture_size = settings['beam']['pinhole size'],
+                               aperture_size = settings['target']['eyebox']['diameter'],
                                number_of_frames = settings['target']['number of frames'],
                                number_of_depth_layers = settings['target']['number of depth layers'],
                                volume_depth = settings['target']['volume depth'],
@@ -89,7 +89,7 @@ def process(settings_fn):
                                           number_of_frames = settings["target"]["number of frames"],
                                           number_of_depth_layers = settings['target']['number of depth layers'],
                                           learning_rate = settings["general"]["learning rate"], 
-                                          learning_rate_floor = settings["general"]["learning rate floor"],
+                                          scheduler_power = settings["general"]["scheduler power"],
                                           double_phase = settings["general"]["double phase constrain"],
                                           method = settings["general"]["method"],
                                           channel_power_filename = settings["target"]["channel power filename"],
@@ -102,7 +102,8 @@ def process(settings_fn):
                                         )
     hologram_phases, frame_reconstructions, laser_powers, channel_powers, peak_amplitude = mcho.optimize(
                                                                                                          number_of_iterations = settings["general"]["iterations"],
-                                                                                                         weights = settings["general"]["loss weights"]
+                                                                                                         weights = settings["general"]["loss weights"],
+                                                                                                         eyebox = settings["target"]["eyebox"]
                                                                                                         )
     settings['target']['peak amplitude'] = peak_amplitude
     save(
@@ -155,15 +156,23 @@ def save(settings, device, hologram_phases, laser_powers, channel_powers, frame_
             odak.learn.tools.save_image(
                                         "{}/reconstruction_frame_{:02d}_depth_{:03d}.png".format(directory, frame_id, depth_id), 
                                         frame_reconstructions[frame_id, depth_id], 
-                                        cmin = 0., 
+                                        cmin = 0.0, 
                                         cmax = intensity_scale, 
                                         color_depth = color_depth
                                        )
         odak.learn.tools.save_image(
                                     "{}/phase_{:02d}.png".format(directory, frame_id), 
                                     phase_normalized, 
-                                    cmin = 0., 
+                                    cmin = 0.0, 
                                     cmax = odak.pi * 2
+                                   )
+        complex_field = odak.learn.wave.generate_complex_field(torch.ones_like(phase_normalized), phase_normalized)
+        eyebox = torch.abs(torch.fft.fftshift(torch.fft.fft2(complex_field)))
+        odak.learn.tools.save_image(
+                                    "{}/eyebox_{:02d}.png".format(directory, frame_id), 
+                                    eyebox, 
+                                    cmin = 0.0, 
+                                    cmax = eyebox.max()
                                    )
         phase_grating = phase + checker
         phase_grating_normalized = phase_grating % (2 * odak.pi)
@@ -171,20 +180,20 @@ def save(settings, device, hologram_phases, laser_powers, channel_powers, frame_
         odak.learn.tools.save_image(
                                     "{}/phase_grated_{:02d}.png".format(directory, frame_id), 
                                     phase_grating_normalized, 
-                                    cmin = 0., 
+                                    cmin = 0.0, 
                                     cmax = odak.pi * 2
                                    )
     if hologram_phases.shape[0] == 3:
         odak.learn.tools.save_image(
                                     '{}/phase_combined.png'.format(directory), 
                                     hologram_phases % (2 * odak.pi), 
-                                    cmin = 0., 
+                                    cmin = 0.0, 
                                     cmax = odak.pi * 2.
                                    )
         odak.learn.tools.save_image(
                                     '{}/phase_combined_w_grating.png'.format(directory), 
                                     hologram_phases_w_grating, 
-                                    cmin = 0., 
+                                    cmin = 0.0, 
                                     cmax = odak.pi * 2.
                                    )
     odak.learn.tools.save_torch_tensor('{}/laser_powers.pt'.format(directory), laser_powers)

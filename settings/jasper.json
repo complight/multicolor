@@ -5,9 +5,9 @@
                                  "device"                  : "cuda",
                                  "iterations"              : 1000,
                                  "output directory"        : "~/output/multi_color/jasper/",
-                                 "learning rate"           : 25e-3,
-                                 "learning rate floor"     : 5e-3,
-                                 "loss weights"            : [3.0, 0.05, 0.05],
+                                 "learning rate"           : 5e-2,
+				 "scheduler power"         : 1,
+                                 "loss weights"            : [1.0, 0.0, 0.05, 0.0],
                                  "double phase constrain"  : 1,
                                  "method"                  : "multi-color",
                                  "reduction"               : "mean"
@@ -29,7 +29,10 @@
                                  "scheme"                  : "defocus",
                                  "weights"                 : [1.0, 1.0, 1.0, 0.0],
                                  "optimize peak amplitude" : 0,
-                                 "eye aperture size"       : 1800,
+                                 "eyebox"                  : {
+                                                              "offset"   : [0.0, 0.0],
+                                                              "diameter" : 1800
+                                                             }, 
                                  "img loss threshold"      : 1.0e-2
                                 },  
 
@@ -43,7 +46,6 @@
 
     "beam"                    : {
                                  "wavelengths"             : [639e-9, 515e-9, 473e-9],
-                                 "pinhole size"            : 1800,
                                  "beam profile"            : "",
                                  "propagation type"        : "Bandlimited Angular Spectrum",
                                  "propagator type"         : "forward"

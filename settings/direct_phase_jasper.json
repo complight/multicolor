@@ -3,44 +3,44 @@
 
     "general"                 : {
                                  "device"                  : "cuda",
-                                 "iterations"              : 1000,
+                                 "iterations"              : 3000,
                                  "output directory"        : "~/output/multi_color/holoeye/",
                                  "learning rate"           : 5e-2,
 				 "scheduler power"         : 1,
-                                 "loss weights"            : [1.0, 0.05, 0.0, 0.0],
-                                 "double phase constrain"  : 1,
-                                 "method"                  : "multi-color",
+                                 "loss weights"            : [1.0, 0.0, 0.0, 0.1],
+                                 "double phase constrain"  : 0,
+                                 "method"                  : "conventional",
                                  "reduction"               : "mean"
                                 },
 
 
     "target"                  : {
-                                 "image filename"          : "./input/hd/holographic_glasses.png",
-                                 "depth filename"          : "./input/hd/holographic_glasses.png",
+                                 "image filename"          : "~/manuscripts/manuscript_implicit_light/source/various_wavefields/source_images/ibm486dx.png",
+                                 "depth filename"          : "input/hd/holographic_glasses_depth.png",
                                  "channel power filename"  : "",
                                  "number of frames"        : 3,
                                  "color depth"             : 8,
-                                 "peak amplitude"          : 1.2,
-                                 "number of depth layers"  : 3,
-                                 "volume depth"            : 0.01,
-                                 "location offset"         : 0.015,
+                                 "peak amplitude"          : 1.0,
+                                 "number of depth layers"  : 1,
+                                 "volume depth"            : 0.0,
+                                 "location offset"         : 0.005,
                                  "defocus blur size"       : 20,
                                  "blur ratio"              : 3,
                                  "scheme"                  : "defocus",
                                  "weights"                 : [1.0, 1.0, 1.0, 0.0],
                                  "optimize peak amplitude" : 0,
-                                 "eyebox"                  : {
-                                                              "offset"   : [0.0, 0.0],
-                                                              "diameter" : 1080
-                                                             },
+				 "eyebox"                  : {
+					                      "offset"   : [0.0, 0.0],
+							      "diameter" : 256
+							     },
                                  "img loss threshold"      : 1.0e-2
                                 },  
 
 
     "spatial light modulator" : {
-                                 "model"                   : "Holoeye Pluto 1.3.3",
-                                 "pixel pitch"             : 8e-6,
-                                 "resolution"              : [1080, 1920]
+                                 "model"                   : "Jasper Display Educational 4k",
+                                 "pixel pitch"             : 3.74e-6,
+                                 "resolution"              : [512, 512]
                                 }, 
 
 
