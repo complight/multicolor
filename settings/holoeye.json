@@ -7,7 +7,7 @@
                                  "output directory"        : "~/output/multi_color/holoeye/",
                                  "learning rate"           : 5e-2,
 				 "scheduler power"         : 1,
-                                 "loss weights"            : [1.0, 0.05, 0.0, 0.0],
+                                 "loss weights"            : [1.0, 0.05, 0.0],
                                  "double phase constrain"  : 1,
                                  "method"                  : "multi-color",
                                  "reduction"               : "mean"
