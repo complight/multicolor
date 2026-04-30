@@ -15,7 +15,7 @@
 
 
     "target"                  : {
-                                 "image filename"          : "~/manuscripts/manuscript_implicit_light/source/various_wavefields/source_images/ibm486dx.png",
+                                 "image filename"          : "input/ibm486dx.png",
                                  "depth filename"          : "input/hd/holographic_glasses_depth.png",
                                  "channel power filename"  : "",
                                  "number of frames"        : 3,
