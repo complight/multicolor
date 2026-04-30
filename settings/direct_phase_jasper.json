@@ -34,10 +34,10 @@
 							      "diameter" : 384
 							     },
                                  "img loss threshold"      : 1.0e-2,
-                                 "vaccination"             : [
+                                 "vaccination"             : {
                                      "state" : 0.0,
                                      "scale" : 1.0e-4
-                                 ]
+                                 }
                                 },  
 
 
