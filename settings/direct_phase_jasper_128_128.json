@@ -33,7 +33,11 @@
 					                      "offset"   : [0.0, 0.0],
 							      "diameter" : 96
 							     },
-                                 "img loss threshold"      : 1.0e-2
+                                 "img loss threshold"      : 1.0e-2,
+                                 "vaccination"             : [
+                                     "state" : 0.0,
+                                     "scale" : 1.0e-4
+                                 ]
                                 },  
 
 
