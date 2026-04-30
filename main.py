@@ -79,8 +79,8 @@ def process(settings_fn):
                                propagation_type = settings['beam']['propagation type'],
                                propagator_type = settings['beam']['propagator type'],
                                method = settings['general']['method'],
-                               vaccination = True,
-                               vaccination_scale = 1e-4,
+                               vaccination = settings['target']['vaccination']['state'],
+                               vaccination_scale = settings['target']['vaccination']['scale'],
                                device = device
                               )
     mcho = multi_color_hologram_optimizer(
