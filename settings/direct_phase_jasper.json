@@ -31,7 +31,7 @@
                                  "optimize peak amplitude" : 0,
 				 "eyebox"                  : {
 					                      "offset"   : [0.0, 0.0],
-							      "diameter" : 256
+							      "diameter" : 384
 							     },
                                  "img loss threshold"      : 1.0e-2
                                 },  
