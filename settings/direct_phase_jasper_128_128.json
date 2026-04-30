@@ -31,7 +31,7 @@
                                  "optimize peak amplitude" : 0,
 				 "eyebox"                  : {
 					                      "offset"   : [0.0, 0.0],
-							      "diameter" : 384
+							      "diameter" : 96
 							     },
                                  "img loss threshold"      : 1.0e-2
                                 },  
@@ -40,7 +40,7 @@
     "spatial light modulator" : {
                                  "model"                   : "Jasper Display Educational 4k",
                                  "pixel pitch"             : 3.74e-6,
-                                 "resolution"              : [512, 512]
+                                 "resolution"              : [128, 128]
                                 }, 
 
 
