@@ -4,10 +4,10 @@
     "general"                 : {
                                  "device"                  : "cuda",
                                  "iterations"              : 3000,
-                                 "output directory"        : "~/output/multi_color/holoeye/",
+                                 "output directory"        : "~/output/multi_color/jasper/",
                                  "learning rate"           : 5e-2,
 				 "scheduler power"         : 1,
-                                 "loss weights"            : [1.0, 0.0, 0.1],
+                                 "loss weights"            : [1.0, 0.0, 0.1, 0.0],
                                  "double phase constrain"  : 0,
                                  "method"                  : "conventional",
                                  "reduction"               : "mean"
@@ -31,7 +31,7 @@
                                  "optimize peak amplitude" : 0,
 				 "eyebox"                  : {
 					                      "offset"   : [0.0, 0.0],
-							      "diameter" : 384
+							      "diameter" : 288
 							     },
                                  "img loss threshold"      : 1.0e-2,
                                  "vaccination"             : {
@@ -44,7 +44,7 @@
     "spatial light modulator" : {
                                  "model"                   : "Jasper Display Educational 4k",
                                  "pixel pitch"             : 3.74e-6,
-                                 "resolution"              : [512, 512]
+                                 "resolution"              : [384, 384]
                                 }, 
 
 
